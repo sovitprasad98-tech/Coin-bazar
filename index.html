@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoinBazaar | Buy USDT at ₹85, Sell at ₹103</title>
+<meta name="description" content="CoinBazaar lets you buy USDT at a low price and sell at a higher price. Fast INR payouts, secure wallet, free Android app.">
+<meta name="theme-color" content="#06251e">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta property="og:title" content="CoinBazaar | Buy USDT at ₹85, Sell at ₹103">
+<meta property="og:image" content="images/icon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#06251e; --deep:#0b3b2e; --emerald:#12805c; --mint:#dff5e8; --mint2:#eef8f1;
+  --gold:#f5b82e; --ivory:#f6faf5; --ink:#0d1f1a; --muted:#5d7269; --line:rgba(13,31,26,.12);
+  --head:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--ivory);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--head);line-height:1.1;letter-spacing:-.02em}
+section{padding:88px 0}
+.sec-head{max-width:640px;margin-bottom:44px}
+.sec-head h2,.h2{font-size:clamp(30px,4.4vw,46px);font-weight:800;color:var(--forest)}
+.sec-head p{margin-top:14px;color:var(--muted);font-size:17px}
+
+/* image frames: graceful if a file is missing */
+.shot{position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(150deg,var(--emerald),var(--deep));min-height:280px}
+.shot img{width:100%;height:100%;object-fit:cover}
+.shot.cutout{background:radial-gradient(closest-side at 50% 52%,rgba(18,128,92,.28),transparent 100%);border-radius:0;overflow:visible;min-height:0}
+.shot.cutout img{height:auto;object-fit:contain;filter:drop-shadow(0 28px 36px rgba(6,37,30,.28))}
+.dark .shot.cutout{background:radial-gradient(closest-side at 50% 52%,rgba(245,184,46,.18),transparent 100%)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 16px var(--body);padding:15px 26px;border-radius:14px;border:0;cursor:pointer;transition:transform .15s,background .15s}
+.btn svg{width:20px;height:20px}
+.btn-gold{background:var(--gold);color:var(--forest);box-shadow:0 8px 24px rgba(245,184,46,.35)}
+.btn-gold:hover{background:#ffc949;transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.22)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+
+/* hero */
+.hero{background:radial-gradient(900px 500px at 85% 10%,#17745a 0%,transparent 60%),linear-gradient(160deg,var(--forest),var(--deep) 70%);color:#fff}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.brand{display:flex;align-items:center;gap:10px;font:800 22px var(--head);letter-spacing:-.02em}
+.brand img{width:38px;height:38px;border-radius:10px}
+nav .links{display:flex;gap:28px;font-size:15px;color:#c6e0d4}
+nav .links a:hover{color:#fff}
+nav .btn{padding:10px 18px;font-size:14px;border-radius:11px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:56px 0 96px}
+.hero h1{font-size:clamp(38px,6vw,66px);font-weight:800}
+.hero h1 span{display:block;color:var(--gold)}
+.hero p.lead{margin:22px 0 32px;font-size:18px;color:#c6e0d4;max-width:48ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:30px;font-size:14px;color:#9cc4b3}
+.meta b{color:#fff;font-weight:600}
+
+/* calculator */
+.card{background:#fff;color:var(--ink);border-radius:24px;padding:22px;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:var(--mint);border-radius:14px;padding:5px;margin-bottom:18px}
+.tabs button{font:600 15px var(--body);padding:11px;border:0;border-radius:10px;background:transparent;color:var(--emerald);cursor:pointer;transition:.2s}
+.tabs button[aria-selected="true"]{background:var(--emerald);color:#fff}
+.rate{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;font-size:14px;color:var(--muted)}
+.rate strong{font:800 24px var(--head);color:var(--ink)}
+.field{border:1.5px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:10px;transition:border .2s}
+.field:focus-within{border-color:var(--emerald)}
+.field label,.field .lbl{font-size:12.5px;color:var(--muted);display:block}
+.field div{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.field input{width:100%;border:0;outline:0;font:700 26px var(--head);background:transparent;color:var(--ink);min-width:0}
+.field output{font:700 26px var(--head)}
+.field .cur{font-weight:600;color:var(--emerald);background:var(--mint);padding:4px 12px;border-radius:99px;font-size:14px}
+.card .btn{width:100%;background:var(--emerald);color:#fff;margin-top:8px}
+.card .btn:hover{background:#0e6c4d}
+.note{text-align:center;font-size:12.5px;color:var(--muted);margin-top:12px}
+
+/* showcase */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split.rev .shot,.split.rev .shot-wrap{order:2}
+.ticks{list-style:none;margin-top:24px;display:grid;gap:14px}
+.ticks li{display:flex;gap:12px}
+.ticks li::before{content:"";flex:none;width:22px;height:22px;margin-top:2px;border-radius:50%;background:var(--mint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2312805c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/14px no-repeat}
+.ticks b{color:var(--forest)}
+.lead2{margin-top:16px;color:var(--muted);font-size:17px}
+
+/* steps */
+.steps-bg{background:var(--mint2)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.step{padding:28px;border-radius:20px;background:#fff;border:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--forest);color:var(--gold);font:800 18px var(--head);margin-bottom:18px}
+.step h3{font-size:21px;margin-bottom:8px;color:var(--forest)}
+.step p{color:var(--muted);font-size:15.5px}
+
+/* pricing */
+.price-card{margin-top:28px;background:linear-gradient(150deg,var(--emerald),var(--deep));color:#fff;border-radius:24px;padding:8px 28px}
+.price-card .row{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.price-card .row:last-child{border:0}
+.price-card b{font:800 30px var(--head)}
+.price-card .buy b{color:var(--mint)} .price-card .sell b{color:var(--gold)}
+.price-card small{display:block;color:#a8cdbd;font-size:13px}
+
+/* security */
+.dark{background:var(--forest);color:#fff}
+.dark .h2{color:#fff}
+.dark .lead2{color:#a8cdbd}
+.dark .ticks li{color:#d5eadf}
+.dark .ticks b{color:#fff}
+.dark .ticks li::before{background-color:rgba(245,184,46,.18);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f5b82e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E")}
+
+/* features */
+.f-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.f{padding:28px;border-radius:20px;background:#fff;border:1px solid var(--line)}
+.f svg{width:30px;height:30px;stroke:var(--emerald);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
+.f h3{font-size:20px;margin-bottom:8px;color:var(--forest)}
+.f p{color:var(--muted);font-size:15px}
+
+
+/* install guide */
+.steps.four{grid-template-columns:repeat(4,1fr)}
+.steps.four .step{padding:24px}
+.steps.four .step h3{font-size:19px}
+.install-note{margin-top:22px;padding:16px 20px;border-radius:14px;background:#fff;border:1px dashed var(--emerald);color:var(--muted);font-size:14.5px}
+.install-note b{color:var(--forest)}
+@media(max-width:900px){.steps.four{grid-template-columns:1fr}}
+
+/* faq */
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{font:700 19px var(--head);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;color:var(--forest)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:26px;line-height:1;color:var(--emerald);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:12px;color:var(--muted)}
+
+/* final cta */
+.final{background:linear-gradient(160deg,var(--deep),var(--forest));color:#fff;border-radius:32px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;align-items:stretch}
+.final .txt{padding:56px 44px}
+.final h2{font-size:clamp(30px,4.2vw,44px);font-weight:800;margin-bottom:14px}
+.final p{color:#b4d6c7;margin-bottom:28px}
+.final small{display:block;margin-top:16px;color:#8ab5a2;font-size:13px}
+.final .shot{border-radius:0;min-height:320px}
+
+footer{padding:40px 0 48px;color:var(--muted);font-size:13.5px}
+footer .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:18px;color:var(--ink);font-size:15px}
+footer .brand{color:var(--forest);font-size:19px}
+footer .brand img{width:30px;height:30px}
+footer p{max-width:80ch}
+
+@media(max-width:900px){
+  .hero-grid,.split,.final{grid-template-columns:1fr;gap:36px}
+  .final{gap:0}
+  .split.rev .shot,.split.rev .shot-wrap{order:0}
+  .hero-grid{padding:32px 0 64px}
+  nav .links{display:none}
+  .steps,.f-grid{grid-template-columns:1fr}
+  .final .txt{padding:40px 24px}
+  section{padding:64px 0}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="dl" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top" aria-label="CoinBazaar home"><img src="images/logo.png" alt="">CoinBazaar</a>
+      <div class="links"><a href="#app">The app</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#security">Security</a><a href="#install">Install</a><a href="#faq">FAQ</a></div>
+      <a class="btn btn-gold" href="CoinBazaar.apk" download="CoinBazaar.apk">Install</a>
+    </nav>
+
+    <div class="hero-grid" id="top">
+      <div>
+        <h1>Buy USDT at ₹85.<span>Sell it at ₹103.</span></h1>
+        <p class="lead">CoinBazaar is a USDT trading app built for Indian users. Purchase at a low price, sell at a higher price, and receive INR directly in your bank or UPI account.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="CoinBazaar.apk" download="CoinBazaar.apk"><svg><use href="#dl"/></svg>Download CoinBazaar.apk</a>
+          <a class="btn btn-ghost" href="#how">How it works</a>
+        </div>
+        <div class="meta"><span><b>Android</b> 7.0 and above</span><span><b>Free</b> to install</span><span><b>Fast</b> INR payouts</span></div>
+      </div>
+
+      <div class="card" aria-label="USDT calculator">
+        <div class="tabs" role="tablist">
+          <button role="tab" id="tb" aria-selected="true">Buy USDT</button>
+          <button role="tab" id="ts" aria-selected="false">Sell USDT</button>
+        </div>
+        <div class="rate"><span id="rl">Buy price</span><strong id="rv">₹85.00</strong></div>
+        <div class="field"><label for="amt" id="l1">You pay (INR)</label>
+          <div><input id="amt" type="number" inputmode="decimal" min="0" value="10000"><span class="cur" id="c1">INR</span></div></div>
+        <div class="field"><span class="lbl" id="l2">You receive (USDT)</span>
+          <div><output id="out" for="amt">0</output><span class="cur" id="c2">USDT</span></div></div>
+        <a class="btn" href="CoinBazaar.apk" download="CoinBazaar.apk"><svg><use href="#dl"/></svg>Install the app to trade</a>
+        <p class="note">Prices shown are indicative. Confirm the final price in the app.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="app">
+  <div class="wrap split">
+    <div class="shot cutout"><img src="images/app-home.webp" alt="CoinBazaar app home screen showing USDT buy and sell prices" width="1122" height="1402" loading="lazy" onerror="this.remove()"></div>
+    <div>
+      <h2 class="h2">Your USDT trading desk, in your pocket</h2>
+      <p class="lead2">Everything you need to trade is on one clean screen. No clutter, no hidden steps.</p>
+      <ul class="ticks">
+        <li><span><b>Clear pricing.</b> The buy and sell price are visible before every trade.</span></li>
+        <li><span><b>One-tap trading.</b> Enter the amount and confirm. Settlement starts immediately.</span></li>
+        <li><span><b>Complete history.</b> Track every order, payment and wallet movement in one place.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="steps-bg" id="how">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="h2">Start trading in three steps</h2><p>From installation to your first trade in a few minutes.</p></div>
+    <div class="steps">
+      <div class="step"><h3>Install the app</h3><p>Download CoinBazaar.apk, install it, and register with your mobile number.</p></div>
+      <div class="step"><h3>Choose Buy or Sell</h3><p>Check the live price, enter your amount and select a payment method.</p></div>
+      <div class="step"><h3>Receive instantly</h3><p>USDT is credited to your wallet, or INR is sent to your bank or UPI.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap split rev">
+    <div class="shot cutout"><img src="images/app-trade.webp" alt="CoinBazaar buy and sell trade screens side by side" width="1408" height="1117" loading="lazy" onerror="this.remove()"></div>
+    <div>
+      <h2 class="h2">A wide margin that works in your favour</h2>
+      <p class="lead2">Buy low, sell high. The difference between our buy and sell price is yours to capture.</p>
+      <div class="price-card" aria-label="Pricing">
+        <div class="row buy"><span>You buy at<small>per 1 USDT</small></span><b id="sb">₹85</b></div>
+        <div class="row sell"><span>You sell at<small>per 1 USDT</small></span><b id="ss">₹103</b></div>
+        <div class="row"><span>Margin<small>per 1 USDT</small></span><b id="sm">₹18</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="security">
+  <div class="wrap split">
+    <div>
+      <h2 class="h2">Security built into every transaction</h2>
+      <p class="lead2">Your funds and personal data are protected by multiple layers of security.</p>
+      <ul class="ticks">
+        <li><span><b>Encrypted wallet.</b> Sensitive data is encrypted on your device and in transit.</span></li>
+        <li><span><b>App lock.</b> Protect access with a PIN or biometric authentication.</span></li>
+        <li><span><b>Verified payments.</b> Every deposit and withdrawal is checked before settlement.</span></li>
+      </ul>
+    </div>
+    <div class="shot cutout"><img src="images/security.webp" alt="Secure digital vault protecting USDT funds" width="1254" height="1254" loading="lazy" onerror="this.remove()"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2 class="h2">Why traders choose CoinBazaar</h2><p>Fast, transparent and always available.</p></div>
+    <div class="f-grid">
+      <div class="f"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg><h3>Competitive pricing</h3><p>Low buy price and high sell price, shown clearly before you confirm.</p></div>
+      <div class="f"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg><h3>Fast payouts</h3><p>INR reaches your bank or UPI account within minutes of a completed sale.</p></div>
+      <div class="f"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h3"/></svg><h3>UPI and bank support</h3><p>Deposit and withdraw using the payment method you prefer.</p></div>
+      <div class="f"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>24/7 availability</h3><p>Trade at any time of day. The market never closes.</p></div>
+      <div class="f"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>Transparent fees</h3><p>No hidden charges. What you see is what you pay.</p></div>
+      <div class="f"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg><h3>Dedicated support</h3><p>Our team is available in the app to resolve any issue quickly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps-bg" id="install">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="h2">How to install CoinBazaar</h2><p>Android requires a few quick confirmations when installing an app outside the Play Store.</p></div>
+    <div class="steps four">
+      <div class="step"><h3>Download</h3><p>Tap "Download CoinBazaar.apk" and wait for the download to finish.</p></div>
+      <div class="step"><h3>Open the file</h3><p>Open it from the download notification or your Downloads folder.</p></div>
+      <div class="step"><h3>Allow installation</h3><p>If prompted, enable "Install unknown apps" for your browser, then go back.</p></div>
+      <div class="step"><h3>Tap Install</h3><p>Confirm the installation, then open CoinBazaar and sign up.</p></div>
+    </div>
+    <p class="install-note"><b>Note:</b> Android may show a security notice because the app is installed outside the Play Store. This is standard for APK installs. Download only from this official page.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="h2">Frequently asked questions</h2></div>
+    <div class="faq">
+      <details><summary>What is CoinBazaar?</summary><p>CoinBazaar is an Android app where you can buy USDT at a low price and sell it at a higher price.</p></details>
+      <details><summary>How do I install the APK?</summary><p>Open the downloaded file. If prompted, allow "Install unknown apps" for your browser, then tap Install.</p></details>
+      <details><summary>How do I receive my money?</summary><p>When you sell, INR is sent to your linked UPI or bank account. When you buy, USDT is credited to your in-app wallet.</p></details>
+      <details><summary>Is the app free?</summary><p>Yes. Downloading and installing CoinBazaar is completely free.</p></details>
+      <details><summary>Who do I contact for help?</summary><p>Use the support section inside the app to reach our team directly.</p></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="final">
+      <div class="txt">
+        <h2>Make your first USDT trade today</h2>
+        <p>Download the app, register, and start trading in minutes.</p>
+        <a class="btn btn-gold" href="CoinBazaar.apk" download="CoinBazaar.apk"><svg><use href="#dl"/></svg>Download CoinBazaar.apk</a>
+        <small>Android 7.0 and above. Free to install.</small>
+      </div>
+      <div class="shot"><img src="images/traders.webp" alt="Trader using the CoinBazaar app on a smartphone" width="1448" height="1086" loading="lazy" onerror="this.remove()"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top"><a class="brand" href="#top"><img src="images/logo.png" alt="">CoinBazaar</a><span>© <span id="yr">2026</span> CoinBazaar. All rights reserved.</span></div>
+    <p>Trading crypto assets involves market risk. Prices change frequently and the prices shown on this page are indicative. Please do your own research before trading.</p>
+  </div>
+</footer>
+
+<script>
+// ===== Edit prices here (INR per 1 USDT) =====
+const BUY_PRICE  = 85;   // user buys (low)
+const SELL_PRICE = 103;  // user sells (high)
+// =============================================
+
+const $ = id => document.getElementById(id);
+let mode = 'buy';
+const fmt = (n, d) => n.toLocaleString('en-IN', {maximumFractionDigits: d});
+
+function render(){
+  const v = parseFloat($('amt').value) || 0;
+  const buy = mode === 'buy';
+  const p = buy ? BUY_PRICE : SELL_PRICE;
+  $('rl').textContent = buy ? 'Buy price' : 'Sell price';
+  $('rv').textContent = '₹' + p.toFixed(2);
+  $('l1').textContent = buy ? 'You pay (INR)' : 'You sell (USDT)';
+  $('l2').textContent = buy ? 'You receive (USDT)' : 'You receive (INR)';
+  $('c1').textContent = buy ? 'INR' : 'USDT';
+  $('c2').textContent = buy ? 'USDT' : 'INR';
+  $('out').textContent = buy ? fmt(v / p, 2) : '₹' + fmt(v * p, 2);
+}
+function setMode(m){
+  mode = m;
+  $('tb').setAttribute('aria-selected', m === 'buy');
+  $('ts').setAttribute('aria-selected', m === 'sell');
+  $('amt').value = m === 'buy' ? 10000 : 100;
+  render();
+}
+$('tb').onclick = () => setMode('buy');
+$('ts').onclick = () => setMode('sell');
+$('amt').addEventListener('input', render);
+$('sb').textContent = '₹' + BUY_PRICE;
+$('ss').textContent = '₹' + SELL_PRICE;
+$('sm').textContent = '₹' + (SELL_PRICE - BUY_PRICE);
+$('yr').textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
